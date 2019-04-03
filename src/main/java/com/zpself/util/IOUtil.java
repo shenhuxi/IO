@@ -24,6 +24,7 @@ public class IOUtil {
             }
         }
     }
+    //读取文件夹里面文件
     public static void redaDirectory( String filePath){
         if(filePath==null){
             return;
@@ -33,11 +34,15 @@ public class IOUtil {
             if(file.isFile()){
                 System.out.println(file.getName());
             }else if(file.isDirectory()){
+                System.out.println(file.getName());
                 redaDirectory(file.getPath());
             }else{
                 System.out.println("Error");
             }
         }
     }
+    //拷贝文件夹
+    public static void redaDirectory( String filePath,String order){
 
+    }
 }

@@ -1,5 +1,6 @@
 package com.zpself.service;
 
+import com.zpself.util.IOUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class FileService {
     }
 
     public void download() {
+        IOUtil.redaDirectory("D:/英雄时刻");
         logger.info("调用了FileService：download（）方法");
     }
 }
