@@ -1,4 +1,4 @@
-package com.zpself.util;
+package com.zpself.extendss;
 
 public class Other {
     public static  void  san(){
