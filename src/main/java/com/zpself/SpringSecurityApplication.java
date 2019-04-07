@@ -26,7 +26,7 @@ public class SpringSecurityApplication {
     }
 
     @PostMapping("/download")//下载
-    public String download(){
+    public String download() throws Exception{
         fileService.download();
         return "download";
     }

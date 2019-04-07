@@ -19,8 +19,9 @@ public class FileService {
         logger.info("调用了FileService：upload（）方法");
     }
 
-    public void download() {
-        IOUtil.redaDirectory("D:/英雄时刻");
+    public void download() throws Exception{
+        //IOUtil.redaDirectory("D:/英雄时刻");
+        IOUtil.redaAndWriteDirectory(new File("D:/英雄时刻"),new File("C:/copy"));
         logger.info("调用了FileService：download（）方法");
     }
 }

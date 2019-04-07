@@ -1,7 +1,6 @@
 package com.zpself.util;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by zengpeng on 2019/4/3
@@ -42,7 +41,26 @@ public class IOUtil {
         }
     }
     //拷贝文件夹
-    public static void redaDirectory( String filePath,String order){
+    public static void redaAndWriteDirectory( File filePath,File order) throws IOException{
+        //在目标文件创建文件夹
+        File newdir = new File(order, filePath.getName());
+        newdir.mkdirs();
+        //得到被复制的文件夹 的文件数组
+        File[] files = filePath.listFiles();
+        for (File file : files) {
+            if(file.isFile()){
+                BufferedInputStream bf  = new BufferedInputStream(new FileInputStream(file));
+                BufferedOutputStream bo = new BufferedOutputStream(new FileOutputStream(new File(newdir,file.getName())));
+                int b;
+                while((b=bf.read())!=-1){
+                    bo.write(b);
+                }
+                bf.close();
+                bo.close();
+            }else{
+                redaAndWriteDirectory(file,newdir);
+            }
 
+        }
     }
 }
