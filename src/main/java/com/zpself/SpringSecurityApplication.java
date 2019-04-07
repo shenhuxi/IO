@@ -1,6 +1,7 @@
 package com.zpself;
 
 import com.zpself.service.FileService;
+import com.zpself.util.IOBase;
 import com.zpself.util.IOFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -32,9 +33,9 @@ public class SpringSecurityApplication {
         fileService.download();
         return "download";
     }
-    @GetMapping("/testIo")//下载
+    @GetMapping("/countFileString")//统计文件字符数量
     public String testIo() throws Exception{
-        return fileService.testIo();
+        return IOBase.countFileString();
     }
     @GetMapping("/changenCode")
     public String changenCode() throws Exception{
