@@ -1,6 +1,7 @@
 package com.zpself;
 
 import com.zpself.service.FileService;
+import com.zpself.util.IOFile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -34,5 +35,10 @@ public class SpringSecurityApplication {
     @GetMapping("/testIo")//下载
     public String testIo() throws Exception{
         return fileService.testIo();
+    }
+    @GetMapping("/changenCode")
+    public String changenCode() throws Exception{
+        IOFile.countFileStringByBuffred("使用文件编码的改变");
+        return "改变成功！";
     }
 }
