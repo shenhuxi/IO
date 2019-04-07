@@ -1,5 +1,6 @@
 package com.zpself.service;
 
+import com.zpself.util.IOBase;
 import com.zpself.util.IOUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,5 +24,9 @@ public class FileService {
         //IOUtil.redaDirectory("D:/英雄时刻");
         IOUtil.redaAndWriteDirectory(new File("D:/英雄时刻"),new File("C:/copy"));
         logger.info("调用了FileService：download（）方法");
+    }
+
+    public String testIo() throws IOException{
+        return IOBase.countFileString();
     }
 }
